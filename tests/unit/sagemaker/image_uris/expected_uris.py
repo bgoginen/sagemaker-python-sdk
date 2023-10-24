@@ -54,6 +54,11 @@ def algo_uri(algo, account, region, version=1):
     return IMAGE_URI_FORMAT.format(account, region, domain, algo, version)
 
 
+def algo_uri_with_tag(algo, account, region,tag):
+    domain = ALTERNATE_DOMAINS.get(region, DOMAIN)
+    return IMAGE_URI_FORMAT.format(account, region, domain, algo, tag)
+
+
 def monitor_uri(account, region=REGION):
     domain = ALTERNATE_DOMAINS.get(region, DOMAIN)
     return MONITOR_URI_FORMAT.format(account, region, domain)
